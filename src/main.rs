@@ -31,7 +31,6 @@ fn main() {
             .unwrap_or_else(|err| panic!("Could not get selected device index. Error: {err}"))
     };
 
-    println!("What should the brightness value be? (min: 0.3, max: 4.9, default: 1.0)");
     let brightness = if input.len() >= 2 {
         if input[1] <= 4.9 && input[1] >= 0.3 {
             input[1].to_string()
@@ -62,6 +61,7 @@ fn main() {
 }
 
 fn get_brightness() -> String {
+    println!("What should the brightness value be? (min: 0.3, max: 4.9, default: 1.0)");
     get_input(
         |s| {
             let s = s.trim();
